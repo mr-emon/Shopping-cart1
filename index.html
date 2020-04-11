@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+   
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="minus" class="btn btn-success">minus</button>
+                           <input id="one" type="text" class="form-control" value="1">
+                           <button id="plus" class="btn btn-success">plus</i></button>
+                        </div>
+                        <h5>$<span id="price">1219</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="cover-minus" class="btn btn-success">minus</button>
+                           <input id="cover-num" type="text" class="form-control text-center" value="1">
+                           <button id="cover-plus" class="btn btn-success">plus</button>
+
+                        </div>
+                        <h5>$<span id="cover-price">59</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$<span id="ttlPrice">1278</span></h5>
+                        <h5>$0</h5>
+                        <h5>$<span id="ttlPrice1">1278</span></h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+
+<script>
+      const minusbtn=document.getElementById("minus");
+   minusbtn.addEventListener("click", function(){
+   
+      const count = document.getElementById("one").value;
+    const countNumber = parseFloat(count);
+    const total = countNumber - 1;
+      document.getElementById("one").value = total;
+      const priceTag = total*1219
+      document.getElementById("price").innerText = priceTag;
+      const price1 = document.getElementById("cover-price").innerText;
+    const price1Num = parseFloat(price1);
+    const price2 = document.getElementById("price").innerText;
+    const price2Num = parseFloat(price2);
+   const Subtotal = price1Num + price2Num;
+   document.getElementById("ttlPrice").innerText = Subtotal;
+   document.getElementById("ttlPrice1").innerText = Subtotal;
+   })  
+
+   const plusbtn=document.getElementById("plus");
+   plusbtn.addEventListener("click", function(){
+      const count = document.getElementById("one").value;
+    const countNumber = parseFloat(count);
+    const total = countNumber + 1;
+      document.getElementById("one").value = total;
+      const priceTag = total*1219
+      document.getElementById("price").innerText = priceTag;
+      const price1 = document.getElementById("cover-price").innerText;
+    const price1Num = parseFloat(price1);
+    const price2 = document.getElementById("price").innerText;
+    const price2Num = parseFloat(price2);
+   const Subtotal = price1Num + price2Num;
+   document.getElementById("ttlPrice").innerText = Subtotal;
+   document.getElementById("ttlPrice1").innerText = Subtotal;
+      
+   })  
+
+   const coverminusbtn=document.getElementById("cover-minus");
+   coverminusbtn.addEventListener("click", function(){
+   
+      const count = document.getElementById("cover-num").value;
+    const countNumber = parseFloat(count);
+    const total = countNumber - 1;
+      document.getElementById("cover-num").value = total;
+      const coverprice = total*59
+      document.getElementById("cover-price").innerText = coverprice;
+      const price1 = document.getElementById("cover-price").innerText;
+    const price1Num = parseFloat(price1);
+    const price2 = document.getElementById("price").innerText;
+    const price2Num = parseFloat(price2);
+   const Subtotal = price1Num + price2Num;
+   document.getElementById("ttlPrice").innerText = Subtotal;
+   document.getElementById("ttlPrice1").innerText = Subtotal;
+
+      
+   })  
+
+   const coverplusbtn=document.getElementById("cover-plus");
+   coverplusbtn.addEventListener("click", function(){
+      const count = document.getElementById("cover-num").value;
+    const countNumber = parseFloat(count);
+    const total = countNumber + 1;
+      document.getElementById("cover-num").value = total;
+      const coverprice = total*59
+      document.getElementById("cover-price").innerText = coverprice;
+      const price1 = document.getElementById("cover-price").innerText;
+    const price1Num = parseFloat(price1);
+    const price2 = document.getElementById("price").innerText;
+    const price2Num = parseFloat(price2);
+   const Subtotal = price1Num + price2Num;
+   document.getElementById("ttlPrice").innerText = Subtotal;
+   document.getElementById("ttlPrice1").innerText = Subtotal;
+      
+   })
+    
+</script>
+</body>
+</html>
